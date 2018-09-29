@@ -232,6 +232,20 @@ config ARCH_MSM8916
 	  This enables support for the MSM8916 chipset. If you dont
 	  know what do here, say N
 
+config MMI_DTB_MERLIN
+	depends on ARCH_MSM8916
+	default n
+	bool "Motorola Merlin Device DTBs"
+	help
+	  Only include Motorola Merlin specific DTBs to limit the number that
+	  get built during kernel compilation.
+
+	  Merlin is a Motorola device that uses MSM8939 chipset, which uses the
+	  MSM8916 defconfig.  Due to its many revisions, adding all of the device
+	  trees will consume at least 1MB of space.
+
+	  If unsure, say 'n'.
+
 config ARCH_MSM8994
 	bool "Enable Support for Qualcomm MSM8994"
 	depends on ARCH_MSM
